@@ -22,7 +22,7 @@ li {listt-style: none;}
 </body>
 </html>
 <?php
-$connect_url = 'host=$_GET['dbhost'] . ' port=' . $_GET['dbport'] . ' dbname=' . $_GET['dbname'] . ' user=' . $_GET['dbuser'] . ' password=' . $_GET['dbpass'];
+$connect_url = 'host='. $_GET['dbhost'] . ' port=' . $_GET['dbport'] . ' dbname=' . $_GET['dbname'] . ' user=' . $_GET['dbuser'] . ' password=' . $_GET['dbpass'];
 $db = pg_connect($connect_url);
 $query = "INSERT INTO book VALUES ('$_POST[bookid]','$_POST[book_name]',
 '$_POST[author]','$_POST[publisher]','$_POST[dop]',

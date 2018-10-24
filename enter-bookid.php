@@ -17,7 +17,7 @@ li {list-style: none;}
 </html>
 <?php
 
-$connect_url = 'host=$_GET['dbhost'] . ' port=' . $_GET['dbport'] . ' dbname=' . $_GET['dbname'] . ' user=' . $_GET['dbuser'] . ' password=' . $_GET['dbpass'];
+$connect_url = 'host=' . $_GET['dbhost'] . ' port=' . $_GET['dbport'] . ' dbname=' . $_GET['dbname'] . ' user=' . $_GET['dbuser'] . ' password=' . $_GET['dbpass'];
 $db = pg_connect($connect_url);
 
 $result = pg_query($db, "SELECT * FROM book where book_id = '$_POST[bookid]'");
