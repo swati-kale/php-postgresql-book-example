@@ -22,7 +22,7 @@ echo "<br><br>Query URL = '$connect_url' <br><br>";
 
 $db = pg_connect($connect_url);
 
-$result = pg_query($db, "SELECT * FROM book where book_id = '$_POST[bookid]'");
+$result = pg_query($db, "SELECT * FROM book where bookid = '$_POST[bookid]'");
 $row = pg_fetch_assoc($result);
 if (isset($_POST['submit']))
 {
