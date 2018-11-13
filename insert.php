@@ -26,7 +26,7 @@ li {listt-style: none;}
 */
 /*$connect_url = 'host=mycluster.crunchydata.svc port=5432 dbname=userdb user=postgres password=SLh6Guv0qa';
 */
-$connect_url = 'host=testcluster.crunchydata.svc port=5432 dbname=userdb user=postgres password=m14PXMRxlo';
+$connect_url = 'host=testcluster-pgpool.crunchydata.svc port=5432 dbname=userdb user=postgres password=m14PXMRxlo';
 echo "<br><br>Query URL = '$connect_url' <br><br>";
 
 $db = pg_connect($connect_url);
