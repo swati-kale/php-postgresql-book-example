@@ -18,7 +18,7 @@ li {list-style: none;}
 <?php
 
 $connect_url = 'host=' . $_GET['dbhost'] . ' port=' . $_GET['dbport'] . ' dbname=' . $_GET['dbname'] . ' user=' . $_GET['dbuser'] . ' password=' . $_GET['dbpass'];
-echo "<br><br>Query URL = '$connect_url' <br><br>"
+echo "<br><br>Query URL = '$connect_url' <br><br>";
 
 $db = pg_connect($connect_url);
 
