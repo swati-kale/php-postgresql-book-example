@@ -18,6 +18,8 @@ li {list-style: none;}
 <?php
 
 $connect_url = 'host=' . $_GET['dbhost'] . ' port=' . $_GET['dbport'] . ' dbname=' . $_GET['dbname'] . ' user=' . $_GET['dbuser'] . ' password=' . $_GET['dbpass'];
+echo "<br><br>Query URL = '$connect_url' <br><br>"
+
 $db = pg_connect($connect_url);
 
 $result = pg_query($db, "SELECT * FROM book where book_id = '$_POST[bookid]'");
@@ -26,7 +28,7 @@ if (isset($_POST['submit']))
 {
 echo "<ul>
 <form name='update' action='enter-bookid.php' method='POST' >
-<li>Book ID:</li><li><input type='text' name='bookid_updated' value='$row[book_id]'  /></li>
+<li>Book ID:</li><li><input type='text' name='bookid_updated' value='$row[bookid]'  /></li>
 <li>Book Name:</li><li><input type='text' name='book_name_updated' value='$row[book_name]' /></li><li>Author:</li><li><input type='text' name='author_updated' value='$row[author]' /></li> <li>Publisher:</li><li><input type='text' name='publisher_updated' value='$row[publisher]' /></li>  <li>Date of publication:</li><li><input type='text' name='dop_updated' value='$row[date_of_publication]' /></li>
 <li>Price (USD):</li><li><input type='text' name='price_updated' value='$row[price]' /></li>
 <li><input type='submit' name='new' /></li>  </form>
@@ -34,7 +36,7 @@ echo "<ul>
 }
 if (isset($_POST['new']))
 {
-$result1 = pg_query($db, "UPDATE book SET book_id = '$_POST[bookid_updated]', book_name = '$_POST[book_name_updated]', 
+$result1 = pg_query($db, "UPDATE book SET bookid = '$_POST[bookid_updated]', book_name = '$_POST[book_name_updated]', 
 author = '$_POST[author_updated]', publisher = '$_POST[publisher_updated]',date_of_publication = '$_POST[dop_updated]',
 price = '$_POST[price_updated]'");
 if (!$result1)
